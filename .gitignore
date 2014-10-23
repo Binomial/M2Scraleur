@@ -26,3 +26,9 @@
 *.exe
 *.out
 *.app
+
+*~
+dist/
+build/
+*.inc
+
