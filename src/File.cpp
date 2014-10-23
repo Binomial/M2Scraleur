@@ -19,7 +19,7 @@ void File::writeFile(string path, string text) {
 
     if (fichier) {
         fichier << text;
-
+        cout << "fichier sauvegarde" << endl;
         fichier.close();
     } else
         cerr << "Impossible d'ouvrir le fichier !" << endl;

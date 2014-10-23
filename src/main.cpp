@@ -24,8 +24,9 @@ int main() {
      * */
     
     File file;
-    file.writeFile("../text/test.txt", "coucou");
-   // file.readFile("../text/test.txt");
+    //file.writeFile("../test.txt", "coucou toi");
+    file.readFile("../text/test.txt");
+    cout << "fin" <<endl;
     return 0;
 }
 

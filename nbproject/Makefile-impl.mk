@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Scraleur
+PROJECTNAME=M2Scraleur
 
 # Active Configuration
 DEFAULTCONF=Debug
