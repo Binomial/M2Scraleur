@@ -12,14 +12,17 @@
 #include <string>
 #include <cstdlib>
 #include <fstream>
+
 using namespace std;
 
 class File {
 public:
+    ofstream openFileWr(string path);
     // Read file at path
     void readFile(string path);
     // write in path
     void writeFile(string path, string text);
+    void readFileAna(string path);
 };
 
 #endif	/* FILE_H */

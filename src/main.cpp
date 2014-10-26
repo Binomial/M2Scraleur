@@ -24,9 +24,9 @@ int main() {
      * */
     
     File file;
-    //file.writeFile("../test.txt", "coucou toi");
-    file.readFile("../text/test.txt");
-    cout << "fin" <<endl;
+    //file.writeFile("Dico/DicoFr.dc", "coucou");
+    file.readFileAna("./Dico/DicoFr.dc");
+            
     return 0;
 }
 
