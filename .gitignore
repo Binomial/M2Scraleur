@@ -32,4 +32,4 @@ dist/
 build/
 *.inc
 nbproject/
-nbproject/*
+Dico/

@@ -26,7 +26,7 @@ namespace anagram {
                 if (line.compare(word) == 0) {
                     return 0;
                 }
-            } while (line.compare("actualises") != 0);
+            } while (line.compare("OLLA") != 0);
             return -1;
         } else {
             cerr << "Could not open fileTest ! line " << line << " word " << word << endl;
@@ -48,7 +48,14 @@ namespace anagram {
     void Anagram::anagram(int id, string word, int position, int size) {
         int j;
         int i;
-
+       
+        // Tester si word est dans un set
+        for(const auto& s : mapWord) {
+            if(s.second.find(word) != s.second.end()) {
+                return;
+            }           
+        }
+        
         if (position == size - 1) { // Stop condition
             i = testWord(word);
             if (i == 0) {
