@@ -105,20 +105,25 @@ int FindWord::commonLetters(string word, string wordToCompare) {
 
 void FindWord::findPotentialWord(string letters) {
     bestPoint = 0;
+    bestWord = "";
+    
     for (const auto& anagram : mapAnagrams) {
-        for (const auto& set : mapAnagrams[anagram.first]) {
+        for (const auto& set : anagram.second) {
             if (compareTo(letters, set)) {
                 int nbPoint = nbPoints(set);
                 if(bestPoint < nbPoint) {
                     bestPoint = nbPoint;
                     bestWord = set;
                 }
-                cout << " avec " << letters << " on peut faire " << set << " pour " << nbPoint << endl;
+                if(nbPoint > 0) {
+                    cout << " avec " << letters << " on peut faire " << set << " pour " << nbPoint << endl;
+                }
+                
             }
         }
     }
-    
-    cout << endl << endl << "Un meilleur mot est " << bestWord << " pour " << bestPoint << " points" << endl << endl;
+    if(bestPoint > 0)
+        cout << endl << endl << "Un meilleur mot est " << bestWord << " pour " << bestPoint << " points" << endl << endl;
 }
 
 bool FindWord::compareTo(string wordToCompare, string word) {
