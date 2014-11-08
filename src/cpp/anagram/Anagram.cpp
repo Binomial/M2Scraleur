@@ -23,7 +23,6 @@ map<int,set<string>> Anagram::getMap() {
  */
 void Anagram::mapToString() {
     ofstream file("dico/map/dictFr.dc", ios::out | ios::trunc);
-    int i = 0;
     for (const auto& anagram : mapAnagrams) {
         cout << anagram.first;
         for (const auto& set : mapAnagrams[anagram.first]) {
@@ -38,7 +37,6 @@ void Anagram::mapToString() {
  */
 void Anagram::mapToFile() {
     ofstream file("dico/map/dictFr.dc", ios::out | ios::trunc);
-    int i = 0;
     for (const auto& anagram : mapAnagrams) {
         file << anagram.first;
         for (const auto& set : mapAnagrams[anagram.first]) {
@@ -55,7 +53,7 @@ void Anagram::mapToFile() {
 void Anagram::lineToMap(string line) {
     int num; 
     int position = 0;
-    int t = 0;
+    unsigned int t = 0;
     string tmp;
     while (t <= line.length()) {
         if (line[t] == ' ' || t == line.length()) {

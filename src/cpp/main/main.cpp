@@ -9,10 +9,9 @@
 #include "../../include/menu/MenuPrinc.h"
 using namespace std;
 
-int main(int argc, char** argv) {
+int main() {
     
     MenuPrinc menu;
     menu.menu();
     return 0;
 }
-

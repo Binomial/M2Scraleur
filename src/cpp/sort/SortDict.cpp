@@ -13,7 +13,7 @@ using namespace std;
  * Create a file with all words that contains  exactly "wordSize" number of  caracters
  * Write in "dico/bad/bad.dc" the word that contains more than MAX_LENGHT caracters
  */
-void SortDict::sortFile(int wordSize, int MAX_LENGTH, string path, string pathSave) {
+void SortDict::sortFile(unsigned int wordSize, unsigned int MAX_LENGTH, string path, string pathSave) {
     ifstream dict(path.c_str(), ios::in);
     ofstream newDict(pathSave, ios::out | ios::trunc);
     ofstream badWord("dico/bad/bad.dc", ios::out | ios::trunc);

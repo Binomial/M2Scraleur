@@ -24,11 +24,16 @@ public:
     int nbPoints(string word);
     string deleteCarFromString(string str, char car);
     void findPotentialWord(string word);
-    
-    
+    int nbWHite(string letters);
+    void start(string letters);
+    int indWhiteLetter(string letters, int position);
+    bool mapContain(string word);
+    void mapClear();
 private:
     map<int, set<string>> mapAnagrams;
+    map<int, set<string>> mapSolution;
     int bestPoint;
     string bestWord;
 };
 #endif	/* FINDWORD_H */
+

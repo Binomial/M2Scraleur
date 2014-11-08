@@ -22,7 +22,7 @@ using namespace std;
  */
 class SortDict {
 public:
-    void sortFile(const int wordSize, const int MAX_LENGTH, string path, string pathSave);
+    void sortFile(const unsigned int wordSize, const unsigned int MAX_LENGTH, string path, string pathSave);
     void splitDictionnary();
 };
 
