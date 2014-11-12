@@ -15,8 +15,7 @@ int main() {
     menu.menu();
   * */
     Anagram an;
-    an.sortWord("abc");
-    an.sortWord("acb");
-    
+    an.fileToMap("dico/dicoFr1.dc");
+    an.generateMap();
     return 0;
 }

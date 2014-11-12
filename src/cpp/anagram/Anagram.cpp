@@ -10,14 +10,12 @@
 
 using namespace std;
 
-
 /*
  * Return mapAnagram (contain all anagrams in format (1 as sa / 2 ah ha...)
  */
-map<int,set<string>> Anagram::getMap() {
+map<int, set<string>> Anagram::getMap() {
     return mapAnagrams;
 }
-
 
 /*
  * Write mapAnagram on the console
@@ -52,7 +50,7 @@ void Anagram::mapToFile() {
  * Parse a line like 1 ab ba to add it on the map
  */
 void Anagram::lineToMap(string line) {
-    int num; 
+    int num;
     int position = 0;
     unsigned int t = 0;
     string tmp;
@@ -72,15 +70,14 @@ void Anagram::lineToMap(string line) {
     }
 }
 
-
 /*
  * Put a file in mapAnagrams
  */
 void Anagram::fileToMap(string path) {
     ifstream file(path.c_str(), ios::in);
-    if(file) {
+    if (file) {
         string line;
-        while(getline(file, line)) {
+        while (getline(file, line)) {
             lineToMap(line);
         }
         cout << "the map was loaded" << endl;
@@ -88,7 +85,6 @@ void Anagram::fileToMap(string path) {
         cerr << "Can't read file in " << path << endl;
     }
 }
-
 
 /*
  * Test the existence of "word" in mapAnagrams
@@ -102,7 +98,6 @@ bool Anagram::mapContain(string word) {
 
     return false;
 }
-
 
 /*
  * Delete car in str
@@ -121,7 +116,6 @@ string Anagram::deleteCarFromString(string str, char car) {
     }
     return str;
 }
-
 
 /*
  * compare if wordToCompare contains all caraters of word
@@ -151,10 +145,9 @@ bool Anagram::compareTo(string word, string wordToCompare) {
     return true;
 }
 
-
 /*
  * Find all angrams of "word" and put it on mapAnagrams 
-*/
+ */
 void Anagram::anagramOfWord(int num, string word, string path) {
     ifstream inputFile(path.c_str(), ios::in);
     if (inputFile) {
@@ -172,7 +165,6 @@ void Anagram::anagramOfWord(int num, string word, string path) {
     }
 }
 
-
 /*
  * Browse a file to find all anagrams of each line, an put it on mapAnagrams
  */
@@ -188,7 +180,6 @@ void Anagram::anagramOfFile(string path) {
         cerr << "Cant open file form " << path << endl;
     }
 }
-
 
 /*
  * Browse all file in "dico/generate/" to find all anagrams of each line, an put it on mapAnagrams
@@ -212,9 +203,31 @@ void Anagram::makeAnagramsDictionary() {
 /*
  * Sort a word in alphabetic order (bca => abc)
  */
-string Anagram::sortWord(string word)  {
-    
+string Anagram::sortWord(string word) {
     sort(word.begin(), word.end());
-    cout << word << endl;
     return word;
+}
+
+void Anagram::generateMap() {
+    ofstream file("dico/new.dc");
+    string temp = "";
+    string wordsort;
+    bool first = true;
+    
+    if (file) {
+        for (const auto& anagram : mapAnagrams) {
+            for (const auto& set : mapAnagrams[anagram.first]) {
+                temp = temp + " " + set;
+                if(first) {
+                    wordsort = sortWord(set);
+                    first = false;
+                }
+            }
+            file << wordsort << temp << endl;
+            first = true;
+            temp = "";
+        }
+    }else {
+        cerr << "Erreur" << endl;
+    }
 }

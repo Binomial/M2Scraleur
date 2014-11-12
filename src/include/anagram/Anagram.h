@@ -38,7 +38,7 @@ public:
     void lineToMap(string line);
     
     string sortWord(string word);
-    
+    void generateMap();
     
 private:
     int num;
