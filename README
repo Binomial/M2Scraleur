@@ -1,0 +1,7 @@
+Tutoré par Julien Bernard, ce projet vise à réaliser un solveur de Scrabble en C++.
+Pour ce faire nous avons explorer différentes solutions, implémenter dans les branches : 
+
+	-Anagrammes
+	-Anagrammeslogn
+	-Trie
+	-Dawg
