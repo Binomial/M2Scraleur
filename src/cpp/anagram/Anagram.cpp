@@ -7,6 +7,7 @@
 
 #include "../../include/anagram/Anagram.h"
 
+
 using namespace std;
 
 
@@ -204,4 +205,16 @@ void Anagram::makeAnagramsDictionary() {
         }
 
     }
+}
+
+/********************************/
+
+/*
+ * Sort a word in alphabetic order (bca => abc)
+ */
+string Anagram::sortWord(string word)  {
+    
+    sort(word.begin(), word.end());
+    cout << word << endl;
+    return word;
 }

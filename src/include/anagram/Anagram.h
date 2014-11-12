@@ -15,6 +15,7 @@
 #include <map>
 #include <set>
 #include <sstream>
+#include<algorithm>
 
 using namespace std;
 
@@ -35,6 +36,9 @@ public:
     void mapToFile();
     void mapToString();
     void lineToMap(string line);
+    
+    string sortWord(string word);
+    
     
 private:
     int num;

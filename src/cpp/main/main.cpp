@@ -11,7 +11,12 @@ using namespace std;
 
 int main() {
     
-    MenuPrinc menu;
+ /*   MenuPrinc menu;
     menu.menu();
+  * */
+    Anagram an;
+    an.sortWord("abc");
+    an.sortWord("acb");
+    
     return 0;
 }
