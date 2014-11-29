@@ -16,8 +16,9 @@ using namespace std;
 int main() {
     Permut p;
     p.importDictionnary();
-    p.start("test");
+    p.generateWodWithWhite("88xepla");
     p.printSolution();
+    p.saveSol();
     return 0;
 }
 
