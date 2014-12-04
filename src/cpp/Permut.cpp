@@ -1,6 +1,6 @@
 #include "../include/Permut.h"
 
-
+using namespace std;
 // Si blanc, on fait toutes les combines, pour chaque on fait le calcul
 
 void Permut::generateWodWithWhite(string letters) {
@@ -28,7 +28,7 @@ void Permut::generateWodWithWhite(string letters) {
                 letters = temp;
                 letters[0] = alphabet[i];
                 temp = letters;
-                for (unsigned int j = 0; j < letters.length(); j++) {
+                for (unsigned int j = i; j < letters.length(); j++) {
                     letters = temp;
                     letters[1] = alphabet[j];
                     sort(letters.begin(), letters.end());
@@ -154,7 +154,7 @@ int Permut::nbWhite(string letters) {
 }
 
 void Permut::saveSol() {
-    ofstream file("solution", ios::out | ios::trunc);
+    ofstream file("solution2", ios::out | ios::trunc);
     if(file) {
     for(const auto& sol : setSolution) {
         file << sol<<endl;
